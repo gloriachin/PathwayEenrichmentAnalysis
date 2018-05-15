@@ -10,21 +10,19 @@ stats_r = importr('stats')
 
 import sys
 if sys.argv[3]=='cp':
-    fin = open('/Users/gloria/Documents/Project/HCC/Analysis/pathway_analysis/script/MsigDB_c2.cp.v5.1.symbols.gmt','r')
+    fin = open('MsigDB_c2.cp.v5.1.symbols.gmt','r')
 if sys.argv[3]=='halmark':
-    fin = open('/Users/gloria/Documents/Project/HCC/Analysis/pathway_analysis/script/h.all.v5.1.symbols.gmt','r')
-#fin=open('/Users/gloria/Documents/Project/coding_projects/KEGG_enrichment/pathways/KEGG_Gene.txt','r')
+    fin = open('h.all.v5.1.symbols.gmt','r')
 if sys.argv[3]=='KEGG':
-    fin = open('/Users/gloria/Documents/Project/coding_projects/KEGG_GENES/kegg_data_20180508/KEGG_pathway_genes.gmt','r')
-    #fin = open('/Users/gloria/Documents/Project/coding_projects/KEGG_GENES/kegg_data_v2/KEGG_Gene.txt','r')
+    fin = open('KEGG_pathway_genes.gmt','r')
 if sys.argv[3]=='KEGG_signal':
-    fin = open('/Users/gloria/Documents/Project/coding_projects/KEGG_GENES/kegg_data_v2/KEGG_Gene_new_signal.txt.strip.txt')
+    fin = open('KEGG_Gene_new_signal.txt.strip.txt')
 if sys.argv[3]=='MSigDB_KEGG':
-    fin = open('/Users/gloria/Documents/Project/coding_projects/KEGG_GENES/kegg_data_v2/MSigDB_KEGG_updata.txt')
+    fin = open('MSigDB_KEGG_updata.txt')
 if sys.argv[3]=='CHR':
-    fin = open('/Users/gloria/Documents/Project/coding_projects/GSEA_curatedGeneSets/c1.all.v5.1.symbols.gmt.txt', 'r')
+    fin = open('c1.all.v5.1.symbols.gmt.txt', 'r')
 if sys.argv[3]=='mouse_KEGG':
-    fin = open('/Users/gloria/Documents/萌略/Project/Jiangying/Database/kegg_mouse/mouse_kegg_geneset_full.txt','r')
+    fin = open('mouse_kegg_geneset_full.txt','r')
 dic_reac_uni = {}
 all_unip = set()
 
@@ -39,13 +37,6 @@ for line in fin.readlines():
     dic_reac_uni[key] = single_unip
 fin.close()
 
-#fou = open('R_HSA_pathway_uniprot.txt','w')
-#for i in dic_reac_uni:
-#    fou.write(i + '\t')
-#    n = len(dic_reac_uni[i])
-#    fou.write(str(n) + '\t')
-#    fou.write(','.join(set(dic_reac_uni[i])) + '\n')
-#fou.close()
 all_u = len(all_unip)
 print("all genes in background datasets:")
 print(all_u)
